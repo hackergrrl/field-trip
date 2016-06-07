@@ -1,0 +1,17 @@
+{
+  "name": "dag-walker",
+  "description": "walk a dag async without knowing its structure ahead of time",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/noffle/dag-walker.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "*"
+  },
+  "license": "ISC"
+}
