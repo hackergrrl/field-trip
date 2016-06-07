@@ -5,6 +5,15 @@
   "repository": {
     "url": "git://github.com/noffle/field-trip.git"
   },
+  "keywords": [
+    "traverse",
+    "walk",
+    "visit",
+    "dag",
+    "directed",
+    "graph",
+    "async"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.js"
