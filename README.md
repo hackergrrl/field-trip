@@ -15,7 +15,8 @@ process of visiting a node in order to learn of its children?
 
 ## Usage
 
-Let's walk a tree, pretending to be ignorant of its structure up front:
+Let's take a field trip through a tree, pretending to be ignorant of its
+structure up front:
 
 ```js
 var fieldtrip = require('field-trip')
@@ -26,6 +27,11 @@ db[1] = {key: 1, value: 2, kids: [0]}
 db[2] = {key: 2, value: 3, kids: [4]}
 db[3] = {key: 3, value: 4, kids: [2]}
 db[4] = {key: 4, value: -1, kids: [0, 1]}
+
+// Begin taking a field trip through this unknown structure!
+fieldtrip([3], visit, function () {
+  console.log('all done')
+})
 
 // Visit a single node. 'add' to add children; 'done' when finished visting.
 function visit (key, add, done) {
@@ -46,11 +52,6 @@ function lookupKey (key, cb) {
     cb(null, db[key])
   }, Math.floor(Math.random() * 100))
 }
-
-// Begin taking a field trip through this unknown structure!
-fieldtrip([3], visit, function () {
-  console.log('all done')
-})
 ```
 
 This will output
