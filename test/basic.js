@@ -37,3 +37,15 @@ test('tree', function (t) {
     t.end()
   })
 })
+
+test('error in traversal', function (t) {
+  walk([3], visit, function done (err) {
+    t.ok(err)
+    t.equal(err.message, 'bogus')
+    t.end()
+  })
+
+  function visit (key, add, done) {
+    done(new Error('bogus'))
+  }
+})
