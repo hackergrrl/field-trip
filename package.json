@@ -1,7 +1,7 @@
 {
   "name": "field-trip",
   "description": "walk a directed graph async without knowing its structure ahead of time",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": "git://github.com/noffle/field-trip.git"
   },
