@@ -6,9 +6,9 @@
 
 There are plenty of modules for traversing
 
-a. file systems
-b. arrays
-c. trees
+1. file systems
+2. arrays
+3. trees
 
 so long as their structure is known ahead of time. What if you require the asynchronous
 process of visiting a node in order to learn of its children?
@@ -90,6 +90,13 @@ With [npm](https://npmjs.org/) installed, run
 ```
 $ npm install field-trip
 ```
+
+## Thanks!
+
+Thanks to chrisdickenson's
+[walk-dag](https://github.com/chrisdickinson/walk-dag) module, which was the
+closest I could find to this. Example and tests are mostly stolen from his work.
+:)
 
 ## License
 
