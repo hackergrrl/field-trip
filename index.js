@@ -22,10 +22,12 @@ module.exports = function (origins, visit, finish) {
         return finish(err)
       }
 
+      pending--
+
       if (queue.length > 0) {
         queue.forEach(walk)
       } else {
-        if (--pending === 0) {
+        if (pending === 0) {
           finish()
         }
       }
