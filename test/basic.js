@@ -11,7 +11,7 @@ test('tree', function (t) {
 
   var seenValues = []
 
-  var expected = [-1, 1, 1, 2, 3, 4]
+  var expected = [4, 3, -1, 1, 2, 1]
 
   function visit (key, add, done) {
     lookupKey(key, function (err, node) {
@@ -33,7 +33,7 @@ test('tree', function (t) {
 
   walk([3], visit, function done () {
     // console.log('all done')
-    t.deepEqual(seenValues.sort(), expected)
+    t.deepEqual(seenValues, expected)
     t.end()
   })
 })

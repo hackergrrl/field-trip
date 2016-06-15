@@ -2,8 +2,10 @@ module.exports = function (origins, visit, finish) {
   var pending = 0
   var finished = false
 
-  function walk (key) {
-    pending++
+  var theQueue = []
+
+  function walk () {
+    var key = theQueue.shift()
 
     visit(key, add, done)
 
@@ -22,17 +24,15 @@ module.exports = function (origins, visit, finish) {
         return finish(err)
       }
 
-      pending--
-
-      if (queue.length > 0) {
-        queue.forEach(walk)
-      } else {
-        if (pending === 0) {
-          finish()
-        }
+      theQueue = queue.concat(theQueue)
+      if (theQueue.length === 0) {
+        return finish()
       }
+
+      walk()
     }
   }
 
-  origins.forEach(walk)
+  theQueue = theQueue.concat(origins)
+  walk(theQueue[0])
 }
