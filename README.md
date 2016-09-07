@@ -92,6 +92,12 @@ With [npm](https://npmjs.org/) installed, run
 $ npm install field-trip
 ```
 
+## See Also
+
+If you use [pull-streams](https://pull-stream.github.io/), consider
+[pull-traverse](https://github.com/pull-stream/pull-traverse) as an excellent
+alternative.
+
 ## Thanks!
 
 Thanks to chrisdickenson's
